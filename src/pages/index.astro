@@ -1,16 +1,47 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+const posts = (await getCollection("blog"));
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		<div class="mt-5 max-w-2xl text-center mx-auto pb-24 pt-24">
-			<h1 class="block font-bold text-gray-800 text-4xl md:text-5xl lg:text-6xl dark:text-neutral-200 mb-4">
-				Hi! I'm
-				<span class="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent">Darryl</span>
-			</h1>
-			<p class="text-2xl">Christian &bull; Husband &bull; Father &bull; Web Developer &bull; Rubyist</p>
-		</div>
-	</main>
+    <main>
+        <div class="mt-5 max-w-2xl text-center mx-auto pb-32 pt-24 flex flex-col justify-center">
+            <h1 class="block font-logo text-gray-800 text-7xl dark:text-neutral-200 mb-6">
+                <span class="mr-2">👋🏽</span> Hi, I'm
+                <span class="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent">Darryl</span>
+            </h1>
+            <p class="text-2xl">Christian &bull; Husband &bull; Father<br>Web Developer &bull; Rubyist</p>
+        </div>
+        <div class="grid lg:grid-cols-5 w-full px-8">
+            <div class="hidden md:block"/>
+            <div class="border border-t-1 border-b-0 border-l-0 border-r-0 border-gray-500 pt-32 col-span-3">
+                <h1 class="text-5xl font-serif italic">Blog</h1>
+                <ul class="space-y-10 mt-12">
+                    {
+                        posts.map((post) => (
+                                <li>
+                                    <p class="mb-2 text-gray-500 dark:text-neutral-500">
+                                        2024
+                                    </p>
+                                    <h5 class="font-medium text-gray-800 dark:text-neutral-200">
+                                        {post.data.title}
+                                    </h5>
+                                    <!--<p class="mt-1 text-sm text-gray-500 dark:text-neutral-500">-->
+                                    <!--    How to make objectives and key results work for your company.-->
+                                    <!--</p>-->
+                                    <p class="mt-1">
+                                        <a class="text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-none focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
+                                           href={`/blog/${post.slug}`}>
+                                            Continue reading
+                                        </a>
+                                    </p>
+                                </li>
+                        ))
+                    }
+                </ul>
+            </div>
+            <div class="hidden md:block"/>
+        </div>
+    </main>
 </Layout>
