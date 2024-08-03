@@ -1,7 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from '../layouts/Layout.astro';
-const posts = (await getCollection("blog"));
+const posts = (await getCollection("blog")).sort(
+    (a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf()
+);
 ---
 
 <Layout title="Welcome to Astro.">
@@ -16,13 +18,13 @@ const posts = (await getCollection("blog"));
         <div class="grid lg:grid-cols-5 w-full px-8">
             <div class="hidden md:block"/>
             <div class="border border-t-1 border-b-0 border-l-0 border-r-0 border-gray-500 pt-32 col-span-3">
-                <h1 class="text-5xl font-serif italic">Blog</h1>
+                <h1 class="text-4xl font-serif italic">Blog</h1>
                 <ul class="space-y-10 mt-12">
                     {
                         posts.map((post) => (
                                 <li>
                                     <p class="mb-2 text-gray-500 dark:text-neutral-500">
-                                        2024
+                                        {post.data.publishedDate.toLocaleDateString('en-us', { year: "numeric", month: "short", day: "numeric" })}
                                     </p>
                                     <h5 class="font-medium text-gray-800 dark:text-neutral-200">
                                         {post.data.title}
