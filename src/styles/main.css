@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: 'PPNeueMontreal';
+        src: url('/fonts/PPNeueMontreal-Medium.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'PPNeueMontreal';
+        src: url('/fonts/PPNeueMontreal-Bold.otf') format('opentype');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'PPNeueMontreal';
+        src: url('/fonts/PPNeueMontreal-Italic.otf') format('opentype');
+        font-weight: normal;
+        font-style: italic;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'PPNeueMontreal';
+        src: url('/fonts/PPNeueMontreal-Medium.otf') format('opentype');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'PPEditorialOld';
+        src: url('/fonts/PPEditorialOld-Medium.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'PPEditorialOld';
+        src: url('/fonts/PPEditorialOld-Bold.otf') format('opentype');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'PPEditorialOld';
+        src: url('/fonts/PPEditorialOld-Italic.otf') format('opentype');
+        font-weight: normal;
+        font-style: italic;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'PPEditorialOld';
+        src: url('/fonts/PPEditorialOld-Medium.otf') format('opentype');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'PPFraktionMono';
+        src: url('/fonts/PPFraktionMono-Medium.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'PPFraktionMono';
+        src: url('/fonts/PPFraktionMono-Bold.otf') format('opentype');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'PPFraktionMono';
+        src: url('/fonts/PPFraktionMono-Italic.otf') format('opentype');
+        font-weight: normal;
+        font-style: italic;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'PPFraktionMono';
+        src: url('/fonts/PPFraktionMono-Medium.otf') format('opentype');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'PPPangaia';
+        src: url('/fonts/PPPangaia-Bold.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+}
