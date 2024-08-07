@@ -41,14 +41,19 @@
 
 <script>
     const menuButton = document.getElementById("hs-header-classic-collapse");
-    menuButton.addEventListener(
-        "click",
-        () => {
-            const menuContainer = document.getElementById("hs-header-classic");
-            if (menuContainer.classList.contains("hidden")) {
-                menuContainer.classList.remove("hidden");
-            } else {
-                menuContainer.classList.add("hidden");
-            }
-        });
+    if (menuButton) {
+        menuButton.addEventListener(
+            "click",
+            () => {
+                const menuContainer = document.getElementById("hs-header-classic");
+                if (!menuContainer) {
+                    return;
+                }
+                if (menuContainer.classList.contains("hidden")) {
+                    menuContainer.classList.remove("hidden");
+                } else {
+                    menuContainer.classList.add("hidden");
+                }
+            });
+    }
 </script>
